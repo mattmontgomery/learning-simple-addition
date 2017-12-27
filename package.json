@@ -1,0 +1,13 @@
+{
+  "name": "learning-simple-training",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mattmontgomery/learning-simple-addition.git",
+  "author": "Matt Montgomery <mmontgomery@deseretdigital.com>",
+  "license": "MIT",
+  "dependencies": {
+    "args": "^3.0.8",
+    "brain.js": "^1.0.0-rc.5",
+    "lodash": "^4.17.4"
+  }
+}
