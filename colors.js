@@ -1,5 +1,4 @@
 const brain = require('brain.js');
-const meanBy = require('lodash/meanBy');
 const readline = require('readline');
 const args = require('args');
 
@@ -27,12 +26,14 @@ const rl = readline.createInterface({
 
 console.log(`Training data...`);
 network.train(trainingData, {
-    learningRate: 0.5,
+    // learningRate: 0.5,
     log: verbose,
-    iterations: 200000
+    // iterations: 200000
 });
 console.log(`Training data done...`);
-runSamples(iterations);
+
+console.log(`Running with ${trainingData.length} training sets`);
+console.log(network.test(generateTrainingData(iterations)))
 
 function generateTrainingData(rows = 5000) {
     const data = [];
@@ -59,10 +60,6 @@ function generateRandomNumberSet(length = 3) {
     return set;
 }
 
-function runSamples() {
-    console.log(`Running with ${trainingData.length} training sets`);
-    console.log(network.test(generateTrainingData(iterations)))
-}
 
 function ask() {
     rl.question('Input three numbers (r,g,b)', a => {
